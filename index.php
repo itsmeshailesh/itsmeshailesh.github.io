@@ -1,5 +1,6 @@
 <?php
-
+echo 'Shailesh Patel';
+/*
 // Server name must be localhost
 $servername = "sql12.freesqldatabase.com";
 
@@ -15,4 +16,5 @@ if (mysqli_connect_errno()) {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   exit();
 }
+*/
 ?>
