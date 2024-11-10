@@ -1,9 +1,150 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Shailesh Patel | Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3em;
+            padding: auto;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .about, .portfolio, .contact {
+            padding: 20px 0;
+        }
+        .about p, .contact p {
+            line-height: 1.6;
+        }
+        .portfolio-items {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .portfolio-item {
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            flex: 1 1 calc(33% - 20px);
+            text-align: center;
+            border-radius: 8px;
+        }
+        .portfolio-item-null {
+            padding: 10px;
+            flex: 1 1 calc(33% - 20px);
+            text-align: center;
+            border-radius: 8px;
+        }
+        .portfolio-item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .contact input, .contact textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+        .contact button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            font-size: 0.9em;
+        }
+        a {
+            text-decoration: none;  /* Removes underline */
+            color: inherit;         /* Inherits color from parent element */
+        }
+    </style>
 </head>
 <body>
-  Shailesh Patel
+
+    <!-- Header -->
+    <header>
+        <h1>Shailesh Patel</h1>
+        <p>Technical Lead at HCLSoftware</p>
+    </header>
+
+    <!-- About Section -->
+    <!-- <section class="about container">
+        <h2>About Me</h2>
+        <p>Hello! I'm John, a web developer and designer based in Ooty. I specialize in creating dynamic and beautiful web pages. I have a passion for web development and love to create for web and mobile devices.</p>
+    </section> -->
+
+    <!-- Portfolio Section -->
+    <section class="portfolio container">
+        <h2>Links</h2>
+        <br>
+        <br>
+        <div class="portfolio-items">
+            <div class="portfolio-item">
+              <a href="https://www.linkedin.com/in/shaileshpatel-sp/">
+              <svg xmlns="http://www.w3.org/2000/svg" fill='#0A66C2' height="50%" viewBox="0 0 448 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>              
+              <h3>Connect with me at LinkedIn</h3>
+              </a>
+            </div>
+            <div class="portfolio-item-null">
+                <!-- <img src="https://via.placeholder.com/150" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>A description of the project goes here.</p> -->
+            </div>
+            <div class="portfolio-item-null">
+                <!-- <img src="https://via.placeholder.com/150" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>A description of the project goes here.</p> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <!-- <section class="contact container">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section> -->
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Shailesh Patel. All rights reserved.</p>
+    </footer>
+
 </body>
 </html>
