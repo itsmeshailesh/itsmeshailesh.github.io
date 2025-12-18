@@ -1,0 +1,68 @@
+{
+    "profile": {
+        "name": "Shailesh Patel",
+        "title": "Technical Lead",
+        "contact": {
+            "email": "shaileshpatel.sp@yahoo.com",
+            "phone": "KzkxIDg5NjI3MzM1MDU=",
+            "github": "itsmeshailesh",
+            "linkedin": "shaileshpatel-sp"
+        }
+    },
+    "summary": "Python Developer with 2.5 years of experience working on large-scale, data-intensive applications. Proficient in using Pandas for complex data analysis and transformation. Skilled in debugging and resolving issues in production-grade systems, with hands-on experience in building RESTful applications within service-based and microservice architectures. Strong focus on performance tuning, code quality, and maintaining reliability in high-volume data workflows.",
+    "experience": [
+        {
+            "role": "Technical Lead",
+            "company": "HCLSoftware",
+            "period": "July 2023 - Present",
+            "details": [
+                "Worked on multiple applications within the HCL ANA(Augmented Network Automation), a network optimisation platform used in the Telecom industry",
+                "Developed a Sanity Check application to validate actions taken by other applications in ANA",
+                "Optimised test suite run time by 60% for a bundle of applications without affecting the code coverage, thus reducing the turnaround time for bugfixes",
+                "Worked on modification of applications to support multiple vendors and technologies in an optimised manner"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "M. Tech. in Computer Science",
+            "additional_info": "(Specialisation: Software Engineering)",
+            "school": "National Institute of Technology, Rourkela",
+            "year": "2021 - 2023"
+        },
+        {
+            "degree": "B. Tech. in Computer Science",
+            "additional_info": "",
+            "school": "Shri Shankaracharya Technical Campus, Bhilai",
+            "year": "2017 - 2021"
+        }
+    ],
+    "skills": [
+        {
+            "category": "Languages",
+            "items": "Python, C++, PHP, SQL"
+        },
+        {
+            "category": "Frameworks",
+            "items": "Django, Flask"
+        },
+        {
+            "category": "Tools",
+            "items": "Git, Docker, Postman, Kubernetes, MongoDB Compass"
+        },
+        {
+            "category": "Other",
+            "items": "Github-Copilot, Unittest, Pytest"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Learn It",
+            "description": "Full Stack web application to host and manage online courses with recorded lecture uploads. Tech: PHP, MySQL, HTML, CSS, JavaScript"
+        },
+        {
+            "name": "e-Quiz",
+            "description": "Developed an online platform for conducting quizzes and exams tailored to schools and coaching institutions. Tech: PHP, MySQL, HTML, CSS, JavaScript"
+        }
+    ]
+}
