@@ -9,7 +9,7 @@
             "linkedin": "shaileshpatel-sp"
         }
     },
-    "summary": "Python Developer with 2.5 years of experience working on large-scale, data-intensive applications. Proficient in using Pandas for complex data analysis and transformation. Skilled in debugging and resolving issues in production-grade systems, with hands-on experience in building RESTful applications within service-based and microservice architectures. Strong focus on performance tuning, code quality, and maintaining reliability in high-volume data workflows.",
+    "summary": "Python Developer with 3.5 years of experience working on large-scale, data-intensive applications. Proficient in using Pandas for complex data analysis and transformation. Skilled in debugging and resolving issues in production-grade systems, with hands-on experience in building RESTful applications within service-based and microservice architectures. Strong focus on performance tuning, code quality, and maintaining reliability in high-volume data workflows.",
     "experience": [
         {
             "role": "Technical Lead",
@@ -41,7 +41,7 @@
         {
             "name": "AWS Certified AI Practitioner",
             "issuer": "Amazon Web Services (AWS)",
-            "year": "2026-10"
+            "year": "Oct 2026"
         }
     ],
     "skills": [
