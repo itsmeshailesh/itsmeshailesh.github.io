@@ -16,10 +16,10 @@
             "company": "HCLSoftware",
             "period": "July 2023 - Present",
             "details": [
-                "Worked on multiple applications within the HCL ANA(Augmented Network Automation), a network optimisation platform used in the Telecom industry",
+                "Worked on multiple applications within HCL ANA (Augmented Network Automation), a network optimisation platform used in the telecom industry",
                 "Developed a Sanity Check application to validate actions taken by other applications in ANA",
-                "Optimised test suite run time by 60% for a bundle of applications without affecting the code coverage, thus reducing the turnaround time for bugfixes",
-                "Worked on modification of applications to support multiple vendors and technologies in an optimised manner"
+                "Optimised test suite run time by 60% for a bundle of applications without affecting code coverage, reducing the turnaround time for bug fixes",
+                "Modified applications to support multiple vendors and technologies in an optimised manner"
             ]
         }
     ],
@@ -37,6 +37,13 @@
             "year": "2017 - 2021"
         }
     ],
+    "certifications": [
+        {
+            "name": "Certification details not specified",
+            "issuer": "",
+            "year": ""
+        }
+    ],
     "skills": [
         {
             "category": "Languages",
@@ -52,17 +59,17 @@
         },
         {
             "category": "Other",
-            "items": "Github-Copilot, Unittest, Pytest"
+            "items": "GitHub Copilot, unittest, pytest"
         }
     ],
     "projects": [
         {
             "name": "Learn It",
-            "description": "Full Stack web application to host and manage online courses with recorded lecture uploads. Tech: PHP, MySQL, HTML, CSS, JavaScript"
+            "description": "Full-stack web application for hosting and managing online courses with recorded lecture uploads. Tech: PHP, MySQL, HTML, CSS, JavaScript"
         },
         {
             "name": "e-Quiz",
-            "description": "Developed an online platform for conducting quizzes and exams tailored to schools and coaching institutions. Tech: PHP, MySQL, HTML, CSS, JavaScript"
+            "description": "Online platform for conducting quizzes and exams for schools and coaching institutions. Tech: PHP, MySQL, HTML, CSS, JavaScript"
         }
     ]
 }

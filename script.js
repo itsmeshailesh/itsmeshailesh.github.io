@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Add timestamp to prevent caching
     fetch('data.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
@@ -7,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
             renderSummary(data.summary);
             renderExperience(data.experience);
             renderEducation(data.education);
+            renderCertifications(data.certifications);
             renderSkills(data.skills);
             renderProjects(data.projects);
 
-            // Allow browser to render before optimizing layout
             setTimeout(optimizeLayout, 100);
         })
         .catch(error => console.error('Error loading data:', error));
@@ -20,34 +19,19 @@ function optimizeLayout() {
     const paperSheet = document.querySelector('.paper-sheet');
     const leftColumn = document.getElementById('left-column');
     const rightColumn = document.getElementById('right-column');
-    const educationSection = document.getElementById('education-section');
 
-    if (!paperSheet || !leftColumn || !rightColumn || !educationSection) return;
+    if (!paperSheet || !leftColumn || !rightColumn) return;
 
-    // 1. Check if Left Column is shorter than Right Column
-    // If so, move Education to Left Column to balance
-    if (leftColumn.offsetHeight < rightColumn.offsetHeight) {
-        console.log('Moving Education to Left Column');
-        leftColumn.appendChild(educationSection);
-    }
-
-    // 2. Check for Overflow and Adjust Font Size
-    // Only if overflow is within 20%
     const maxOverflowRatio = 0.20;
-    let currentFontSize = 16; // Default browser root font size is usually 16px
+    let currentFontSize = 16;
 
-    // Loop to reduce font size if overflowing
     while (paperSheet.scrollHeight > paperSheet.clientHeight && currentFontSize > 10) {
         const overflowRatio = (paperSheet.scrollHeight - paperSheet.clientHeight) / paperSheet.clientHeight;
 
-        if (overflowRatio > maxOverflowRatio) {
-            console.log('Overflow too large for font scaling:', overflowRatio);
-            break; // Too much overflow, let it scroll
-        }
+        if (overflowRatio > maxOverflowRatio) break;
 
         currentFontSize -= 0.5;
         document.documentElement.style.fontSize = `${currentFontSize}px`;
-        console.log(`Reducing root font size to ${currentFontSize}px`);
     }
 }
 
@@ -72,72 +56,72 @@ function renderSummary(summary) {
 
 function renderExperience(experience) {
     const container = document.getElementById('experience-list');
-    let html = '';
-    experience.forEach(job => {
-        html += `
-            <div class="mb-4">
-                <div class="d-flex justify-content-between align-items-baseline">
-                    <h4 class="h5 fw-bold mb-1">${job.role}</h4>
-                    <span class="text-muted small">${job.period}</span>
-                </div>
-                <div class="text-muted fst-italic mb-2">${job.company}</div>
-                <ul>
-                    ${job.details.map(detail => `<li>${detail}</li>`).join('')}
-                </ul>
+    container.innerHTML = experience.map(job => `
+        <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-baseline">
+                <h4 class="h5 fw-bold mb-1">${job.role}</h4>
+                <span class="text-muted small">${job.period}</span>
             </div>
-        `;
-    });
-    container.innerHTML = html;
+            <div class="text-muted fst-italic mb-2">${job.company}</div>
+            <ul>
+                ${job.details.map(detail => `<li>${detail}</li>`).join('')}
+            </ul>
+        </div>
+    `).join('');
 }
 
 function renderEducation(education) {
     const container = document.getElementById('education-list');
-    let html = '';
-    education.forEach(edu => {
-        const additionalInfo = edu.additional_info ? `<div class="text-muted" style="font-size: x-small;">${edu.additional_info}</div>` : '';
-        html += `
-            <div class="mb-3 d-flex align-items-baseline">
-                <span class="me-2">•</span>
-                <div class="flex-grow-1">
-                    <div class="d-flex justify-content-between align-items-baseline">
-                        <h5 class="h6 fw-bold mb-1">${edu.degree}</h5>
-                        <span class="small text-muted">${edu.year}</span>
-                    </div>
-                    ${additionalInfo}
-                    <div class="fst-italic">${edu.school}</div>
+    container.innerHTML = education.map(edu => {
+        const additionalInfo = edu.additional_info ? `<div class="text-muted small">${edu.additional_info}</div>` : '';
+        return `
+            <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-baseline">
+                    <h5 class="h6 fw-bold mb-1">${edu.degree}</h5>
+                    <span class="small text-muted">${edu.year}</span>
                 </div>
+                ${additionalInfo}
+                <div class="fst-italic small">${edu.school}</div>
             </div>
         `;
-    });
-    container.innerHTML = html;
+    }).join('');
+}
+
+function renderCertifications(certifications) {
+    const container = document.getElementById('certifications-list');
+
+    if (!certifications || certifications.length === 0) {
+        document.getElementById('certifications-section').style.display = 'none';
+        return;
+    }
+
+    container.innerHTML = certifications.map(certification => `
+        <div class="mb-3">
+            <h5 class="h6 fw-bold mb-1">${certification.name}</h5>
+            ${certification.issuer ? `<div class="small text-muted">${certification.issuer}</div>` : ''}
+            ${certification.year ? `<div class="small text-muted">${certification.year}</div>` : ''}
+        </div>
+    `).join('');
 }
 
 function renderSkills(skills) {
     const container = document.getElementById('skills-list');
-    let html = '';
-    skills.forEach(skillGroup => {
-        html += `
-            <div class="mb-3">
-                <h4 class="h6 fw-bold mb-1">${skillGroup.category}</h4>
-                <p class="small mb-2">${skillGroup.items}</p>
-            </div>
-        `;
-    });
-    container.innerHTML = html;
+    container.innerHTML = skills.map(skillGroup => `
+        <div class="mb-3">
+            <h4 class="h6 fw-bold mb-1">${skillGroup.category}</h4>
+            <p class="small mb-2">${skillGroup.items}</p>
+        </div>
+    `).join('');
 }
 
 function renderProjects(projects) {
     const container = document.getElementById('projects-list');
-    let html = '';
-    projects.forEach(project => {
-        html += `
-            <div class="mb-3">
-                <h4 class="h6 fw-bold mb-1">${project.name}</h4>
-                <p class="small mb-2">${project.description}</p>
-            </div>
-        `;
-    });
-    container.innerHTML = html;
+    container.innerHTML = projects.map(project => `
+        <div class="mb-3">
+            <h4 class="h6 fw-bold mb-1">${project.name}</h4>
+            <p class="small mb-2">${project.description}</p>
+        </div>
+    `).join('');
 }
 
 function downloadPDF() {
@@ -150,32 +134,24 @@ function downloadPDF() {
         jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
     };
 
-    // Store original styles
     const originalHeight = element.style.height;
     const originalOverflow = element.style.overflowY;
     const originalFontSize = document.documentElement.style.fontSize;
 
-    // Prepare for capture
-    element.classList.add('pdf-mode'); // Force single column layout
+    element.classList.add('pdf-mode');
     element.style.height = 'auto';
     element.style.overflowY = 'visible';
 
-    // Fit to A4 Page Logic
-    // A4 Aspect Ratio = 1.414 (Height / Width)
-    // We want content height <= width * 1.414
     const a4Ratio = 1.414;
     let currentFontSize = parseFloat(window.getComputedStyle(document.documentElement).fontSize);
-    const minFontSize = 8; // Allow shrinking a bit more for single column
+    const minFontSize = 8;
 
-    // Iteratively reduce font size if content is too tall for one page
     while (element.scrollHeight > element.offsetWidth * a4Ratio && currentFontSize > minFontSize) {
         currentFontSize -= 0.5;
         document.documentElement.style.fontSize = `${currentFontSize}px`;
-        console.log(`PDF Generation: Reducing font size to ${currentFontSize}px to fit single page`);
     }
 
     html2pdf().set(opt).from(element).save().then(() => {
-        // Restore original styles
         element.classList.remove('pdf-mode');
         element.style.height = originalHeight;
         element.style.overflowY = originalOverflow;
